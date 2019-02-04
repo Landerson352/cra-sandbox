@@ -2,21 +2,14 @@ import React from 'react';
 import UIkit from 'uikit';
 
 import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
-import { linkTo } from '@storybook/addon-links';
-
-import { Button, Welcome } from '@storybook/react/demo';
 
 import '../index.less';
 
-storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
+import Sortable from '../components/Sortable';
 
 storiesOf('Button', module)
-  .add('with text', () => <Button onClick={action('clicked')}>Hello Button</Button>)
-  .add('with some emoji', () => (
-    <Button onClick={action('clicked')}>
-      <span role="img" aria-label="so cool">
-        😀 😎 👍 💯
-      </span>
-    </Button>
-  ));
+  .add('Default', () => <button className="uk-button uk-button-default">Default</button>)
+  .add('Primary', () => <button className="uk-button uk-button-primary">Primary</button>);
+
+storiesOf('Sortable', module)
+  .add('Default', () => <Sortable />);
