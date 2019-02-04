@@ -1,3 +1,32 @@
-body {
-  background-color: #cef;
+@import "../node_modules/uikit/src/less/uikit.less";
+@import "../node_modules/uikit/src/less/uikit.theme.less";
+
+.hook-notification-message-primary() {
+  background-color: @notification-message-primary-color;
+  color: @global-inverse-color;
+}
+
+.hook-notification-message-success() {
+  background-color: @notification-message-success-color;
+  color: @global-inverse-color;
+}
+
+.hook-notification-message-warning() {
+  background-color: @notification-message-warning-color;
+  color: @global-inverse-color;
+}
+
+.hook-notification-message-danger() {
+  background-color: @notification-message-danger-color;
+  color: @global-inverse-color;
+}
+
+.uk-notification-close {
+  color: @global-inverse-color;
+  opacity: 0.6;
+
+  &:hover {
+    color: @global-inverse-color;
+    opacity: 1;
+  }
 }
