@@ -1,6 +1,46 @@
 @import "../node_modules/uikit/src/less/uikit.less";
 @import "../node_modules/uikit/src/less/uikit.theme.less";
 
+@global-font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+@base-body-font-weight: 300;
+@base-heading-font-weight: 300;
+
+@button-text-transform: uppercase;
+
+@form-label-font-size: 0.75rem;
+
+@card-default-box-shadow: @global-large-box-shadow;
+
+.hook-button() {
+  font-weight: bold;
+  border-radius: @button-line-height / 4;
+  position: relative;
+
+  // shiny bit (yeah I ripped off Nick)
+  &:before {
+    content: "";
+    display: block;
+    background-color: fade(white, 50%);
+    position: absolute;
+    top: 1px;
+    right: @button-line-height / 5.5;
+    left: @button-line-height / 5.5;
+    height: 2px;
+    border-radius: 1px;
+  }
+}
+
+.hook-button-primary() {
+  background: linear-gradient(125deg, @global-primary-background, #AB5EFD);
+  box-shadow: 0 14px 25px fade(mix(@global-primary-background, #AB5EFD), 50%);
+}
+
+.hook-form-label() {
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
 .hook-notification-message-primary() {
   background-color: @notification-message-primary-color;
   color: @global-inverse-color;
@@ -21,7 +61,7 @@
   color: @global-inverse-color;
 }
 
-.uk-notification-close {
+.hook-notification-close() {
   color: @global-inverse-color;
   opacity: 0.6;
 
