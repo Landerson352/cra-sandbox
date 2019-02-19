@@ -8,20 +8,17 @@ const withClassNames = (persistentClassNames) => withPropsOnChange(['className']
 }));
 
 const renderElement = (defaultTag) => (props) => React.createElement(props.tag || defaultTag, {
+  // TODO: move into withPropsOnChange HoC
+  type: (props.tag || defaultTag) === 'button' ? 'button' : ((props.tag || defaultTag) === 'input' ? 'text' : null),
+
   ...omit(props, ['modal-close', 'toggle', 'tag']),
   className: cn(props.className, { 'uk-modal-close': props['modal-close'] }),
   'data-uk-toggle': props.toggle,
 });
 
 const PrimaryButton = withClassNames('uk-button uk-button-primary')(renderElement('button'));
-PrimaryButton.defaultProps = {
-  type: 'button',
-};
 
 const Button = withClassNames('uk-button uk-button-default')(renderElement('button'));
-Button.defaultProps = {
-  type: 'button',
-};
 
 const Card = withClassNames('uk-card uk-card-default')(renderElement('div'));
 
@@ -34,9 +31,6 @@ const FormControls = withClassNames('uk-form-controls')(renderElement('div'));
 const FormLabel = withClassNames('uk-form-label')(renderElement('label'));
 
 const Input = withClassNames('uk-input')(renderElement('input'));
-Input.defaultProps = {
-  type: 'text',
-};
 
 const Modal = renderElement('div');
 Modal.defaultProps = {
