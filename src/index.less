@@ -1,16 +1,23 @@
-@import "../node_modules/uikit/src/less/uikit.less";
 @import "../node_modules/uikit/src/less/uikit.theme.less";
 
+
+
+// variables.less
+
 @global-font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+
+
+// base.less
 
 @base-body-font-weight: 300;
 @base-heading-font-weight: 300;
 
+
+
+// button.less
+
 @button-text-transform: uppercase;
-
-@form-label-font-size: 0.75rem;
-
-@card-default-box-shadow: @global-large-box-shadow;
 
 .hook-button() {
   font-weight: bold;
@@ -36,10 +43,26 @@
   box-shadow: 0 14px 25px fade(mix(@global-primary-background, #AB5EFD), 50%);
 }
 
+
+
+// card.less
+
+@card-default-box-shadow: @global-large-box-shadow;
+
+
+
+// form.less
+
+@form-label-font-size: 0.75rem;
+
 .hook-form-label() {
   font-weight: 500;
   text-transform: uppercase;
 }
+
+
+
+// notification.less
 
 .hook-notification-message-primary() {
   background-color: @notification-message-primary-color;
@@ -70,29 +93,3 @@
     opacity: 1;
   }
 }
-
-
-
-.bg-almost-white:extend(.uk-background-muted) {}
-
-.flex:extend(.uk-flex) {}
-.flex-middle:extend(.uk-flex-middle) {}
-.flex-left:extend(.uk-flex-left) {}
-
-.mb-4:extend(.uk-margin-bottom) {}
-.ml-3:extend(.uk-margin-small-left) {}
-.ml-4:extend(.uk-margin-left) {}
-.mt-8:extend(.uk-margin-large-top) {}
-.hook-margin-misc() {
-  .mx-auto {
-    .uk-margin-auto-left;
-    .uk-margin-auto-right;
-  }
-}
-
-.p-8:extend(.uk-padding-large) {}
-
-.text-right:extend(.uk-text-right) {}
-.text-muted:extend(.uk-text-muted) {}
-
-.w-lg:extend(.uk-width-large) {}
