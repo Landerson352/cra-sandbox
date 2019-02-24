@@ -1,56 +1,56 @@
 import React, { Component } from 'react';
 
-import UK from './components/UK';
+import { Button, PrimaryButton, Card, Modal, StackedForm, FormLabel, FormControls, Input } from './components/UK';
 
 class App extends Component {
   render() {
     return (
       <div>
-        <UK.Button toggle="target: #modal-example">Open</UK.Button>
+        <Button toggle="target: #modal-example">Open</Button>
 
-        <UK.Modal id="modal-example">
-          <UK.ModalDialog>
-            <UK.ModalBody>
-              <UK.ModalTitle>Headline</UK.ModalTitle>
+        <Modal id="modal-example">
+          <Modal.Dialog>
+            <Modal.Body>
+              <Modal.Title>Headline</Modal.Title>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
               <p className="text-right">
-                <UK.Button modal-close>Cancel</UK.Button>
-                <UK.PrimaryButton className="ml-sm">Save</UK.PrimaryButton>
+                <Button modal-close>Cancel</Button>
+                <PrimaryButton className="ml-sm">Save</PrimaryButton>
               </p>
-            </UK.ModalBody>
-          </UK.ModalDialog>
-        </UK.Modal>
+            </Modal.Body>
+          </Modal.Dialog>
+        </Modal>
 
-        <div className="bg-muted p-l">
-          <UK.Card className="w-lg mx-auto">
-            <UK.CardBody>
+        <div className="bg-muted p-lg">
+          <Card className="w-lg mx-auto">
+            <Card.Body>
               <h2>Log in</h2>
 
-              <UK.StackedForm>
+              <StackedForm>
 
                 <div className="mb">
-                  <UK.FormLabel htmlFor="login_username">Username</UK.FormLabel>
-                  <UK.FormControls>
-                    <UK.Input id="login_username" />
-                  </UK.FormControls>
+                  <FormLabel htmlFor="login_username">Username</FormLabel>
+                  <FormControls>
+                    <Input id="login_username" />
+                  </FormControls>
                 </div>
 
                 <div className="mb">
-                  <UK.FormLabel htmlFor="login_password">Password</UK.FormLabel>
-                  <UK.FormControls>
-                    <UK.Input id="login_password" type="password" />
-                  </UK.FormControls>
+                  <FormLabel htmlFor="login_password">Password</FormLabel>
+                  <FormControls>
+                    <Input id="login_password" type="password" />
+                  </FormControls>
                 </div>
 
                 <div className="flex flex-middle flex-left mt-lg">
-                  <UK.PrimaryButton>Log in</UK.PrimaryButton>
+                  <PrimaryButton>Log in</PrimaryButton>
                   <a href="#" className="text-muted ml">Need to create an account?</a>
                 </div>
 
-              </UK.StackedForm>
+              </StackedForm>
 
-            </UK.CardBody>
-          </UK.Card>
+            </Card.Body>
+          </Card>
         </div>
       </div>
     );

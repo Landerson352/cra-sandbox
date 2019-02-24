@@ -13,47 +13,43 @@ const renderElement = (defaultTag) => (props) => React.createElement(props.tag |
 
   ...omit(props, ['modal-close', 'toggle', 'tag']),
   className: cn(props.className, { 'uk-modal-close': props['modal-close'] }),
-  'data-uk-toggle': props.toggle,
+  'data-uk-toggle': props['data-uk-toggle'] || props.toggle,
 });
 
-const PrimaryButton = withClassNames('uk-button uk-button-primary')(renderElement('button'));
+export const PrimaryButton = withClassNames('uk-button uk-button-primary')(renderElement('button'));
 
-const Button = withClassNames('uk-button uk-button-default')(renderElement('button'));
+export const Button = withClassNames('uk-button uk-button-default')(renderElement('button'));
 
-const Card = withClassNames('uk-card uk-card-default')(renderElement('div'));
+export const Card = withClassNames('uk-card uk-card-default')(renderElement('div'));
 
-const CardBody = withClassNames('uk-card-body')(renderElement('div'));
+Card.Body = withClassNames('uk-card-body')(renderElement('div'));
 
-const StackedForm = withClassNames('uk-form-stacked')(renderElement('form'));
+export const StackedForm = withClassNames('uk-form-stacked')(renderElement('form'));
 
-const FormControls = withClassNames('uk-form-controls')(renderElement('div'));
+export const FormControls = withClassNames('uk-form-controls')(renderElement('div'));
 
-const FormLabel = withClassNames('uk-form-label')(renderElement('label'));
+export const FormLabel = withClassNames('uk-form-label')(renderElement('label'));
 
-const Input = withClassNames('uk-input')(renderElement('input'));
+export const Input = withClassNames('uk-input')(renderElement('input'));
 
-const Modal = renderElement('div');
+export const Modal = renderElement('div');
 Modal.defaultProps = {
   'data-uk-modal': true,
 };
 
-const ModalDialog = withClassNames('uk-modal-dialog')(renderElement('div'));
+Modal.Dialog = withClassNames('uk-modal-dialog')(renderElement('div'));
 
-const ModalBody = withClassNames('uk-modal-body')(renderElement('div'));
+Modal.Body = withClassNames('uk-modal-body')(renderElement('div'));
 
-const ModalTitle = withClassNames('uk-modal-title')(renderElement('h2'));
+Modal.Title = withClassNames('uk-modal-title')(renderElement('h2'));
 
 export default {
   PrimaryButton,
   Button,
   Card,
-  CardBody,
   StackedForm,
   FormControls,
   FormLabel,
   Input,
   Modal,
-  ModalDialog,
-  ModalBody,
-  ModalTitle,
 };
