@@ -22,8 +22,8 @@ const loginFormOptions = {
 class App extends Component {
   render() {
     return (
-      <div className="bg-muted p-lg flex flex-middle flex-center" data-uk-height-viewport="expand: true">
-        <Card className="w-lg">
+      <div className="bg-secondary p-lg flex flex-middle flex-center" data-uk-height-viewport="expand: true">
+        <Card className="w-lg bg-muted">
           <Card.Body>
             <h2>Log in</h2>
 

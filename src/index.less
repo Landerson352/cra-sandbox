@@ -8,7 +8,7 @@
 // variables.less
 
 @global-font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-
+@global-border-radius: 6px;
 
 
 // base.less
@@ -24,7 +24,7 @@
 
 .hook-button() {
   font-weight: bold;
-  border-radius: @button-line-height / 4;
+  border-radius: @global-border-radius;
   position: relative;
 
   // shiny bit (yeah I ripped off Nick)
@@ -34,8 +34,8 @@
     background-color: fade(white, 50%);
     position: absolute;
     top: 1px;
-    right: @button-line-height / 5.5;
-    left: @button-line-height / 5.5;
+    right: @global-border-radius + 1px;
+    left: @global-border-radius + 1px;
     height: 2px;
     border-radius: 1px;
   }
@@ -52,6 +52,10 @@
 
 @card-default-box-shadow: @global-large-box-shadow;
 
+.hook-card() {
+  border-radius: @global-border-radius;
+}
+
 
 
 // form.less
@@ -63,6 +67,9 @@
   text-transform: uppercase;
 }
 
+.hook-form {
+  border-radius: @global-border-radius;
+}
 
 
 // notification.less
@@ -101,6 +108,7 @@
 // utilities.less
 
 .bg-muted:extend(.uk-background-muted) {}
+.bg-secondary:extend(.uk-background-secondary) {}
 
 .flex:extend(.uk-flex) {}
 .flex-center:extend(.uk-flex-center) {}
