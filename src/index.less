@@ -1,5 +1,8 @@
 @import "../node_modules/uikit/src/less/uikit.theme.less";
 
+* {
+  box-sizing: border-box;
+}
 
 
 // variables.less
@@ -100,10 +103,12 @@
 .bg-muted:extend(.uk-background-muted) {}
 
 .flex:extend(.uk-flex) {}
+.flex-center:extend(.uk-flex-center) {}
 .flex-middle:extend(.uk-flex-middle) {}
 .flex-left:extend(.uk-flex-left) {}
 
 .mb:extend(.uk-margin-bottom) {}
+.mb-sm:extend(.uk-margin-small-bottom) {}
 .ml:extend(.uk-margin-left) {}
 .ml-sm:extend(.uk-margin-small-left) {}
 .mr-sm:extend(.uk-margin-small-right) {}
@@ -112,7 +117,11 @@
 
 .p-lg:extend(.uk-padding-large) {}
 
+.pos-center:extend(.uk-position-center) {}
+
+.text-danger:extend(.uk-text-danger) {}
 .text-muted:extend(.uk-text-muted) {}
 .text-right:extend(.uk-text-right) {}
+.text-small:extend(.uk-text-small) {}
 
 .w-lg:extend(.uk-width-large) {}
