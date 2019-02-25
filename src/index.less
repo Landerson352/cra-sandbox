@@ -35,12 +35,14 @@
     left: @button-line-height / 5.5;
     height: 2px;
     border-radius: 1px;
+    filter: blur(1px);
   }
 }
 
 .hook-button-primary() {
   background: linear-gradient(125deg, @global-primary-background, #AB5EFD);
   box-shadow: 0 14px 25px fade(mix(@global-primary-background, #AB5EFD), 50%);
+  background-size: calc(100% + 1px) calc(100% + 1px);
 }
 
 
