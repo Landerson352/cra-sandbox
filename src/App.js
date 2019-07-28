@@ -1,13 +1,9 @@
-import React, { Component, Fragment } from 'react';
+import React from 'react';
 
-class App extends Component {
-  render() {
-    return (
-      <Fragment>
-          Welcome to React
-      </Fragment>
-    );
-  }
-}
+import ContactList from './components/ContactList';
+
+const App = () => (
+  <ContactList />
+);
 
 export default App;
