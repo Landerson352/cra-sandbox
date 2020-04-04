@@ -5,11 +5,11 @@ import { storiesOf } from '@storybook/react';
 
 import '../theme.less';
 
-import Sortable from '../components/Sortable';
+import SortableDemo from '../components/SortableDemo';
 
 storiesOf('Button', module)
   .add('Default', () => <button className="uk-button uk-button-default">Default</button>)
   .add('Primary', () => <button className="uk-button uk-button-primary">Primary</button>);
 
 storiesOf('Sortable', module)
-  .add('Default', () => <Sortable />);
+  .add('Default', () => <SortableDemo />);

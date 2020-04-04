@@ -6,7 +6,7 @@ import useSortable from '../utilities/useSortable';
 import Card from './Card';
 import Grid from './Grid';
 
-const Sortable = () => {
+const SortableDemo = () => {
   const sortable = useSortable({
     handle: '.uk-card',
     onMove: ({ index, target }) => {
@@ -18,11 +18,11 @@ const Sortable = () => {
     <Grid as="ul" variant="small" childWidth="1-3" {...sortable}>
       {times(12, (i) => (
         <li key={i} data-key={i}>
-          <Card variant="default body">Item {i}</Card>
+          <Card variant="default body" m="small">Item {i}</Card>
         </li>
       ))}
     </Grid>
   );
 };
 
-export default Sortable;
+export default SortableDemo;

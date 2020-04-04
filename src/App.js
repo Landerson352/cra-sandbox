@@ -3,23 +3,19 @@ import React from 'react';
 import Box from './components/Box';
 import Button from './components/Button';
 import Card from './components/Card';
-import CustomComponent from './components/CustomComponent';
 import Form from './components/Form';
-import Input from './components/Input';
-import Modal, { ModalTitle, useModal } from './components/Modal';
-import Sortable from './components/Sortable';
+import Modal, { useModal } from './components/Modal';
+import SortableDemo from './components/SortableDemo';
 
 const App = () => {
   const [modal, modalTrigger] = useModal('example-modal');
 
   return (
     <div>
-      <Sortable />
-      <CustomComponent />
+      <SortableDemo />
       <Button className="uk-margin-small-right" {...modalTrigger}>Open</Button>
 
-      <Modal {...modal}>
-        <ModalTitle className="uk-modal-title">Headline</ModalTitle>
+      <Modal title="Headline" {...modal}>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         <p className="uk-text-right">
           <button className="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>

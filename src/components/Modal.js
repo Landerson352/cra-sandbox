@@ -7,20 +7,17 @@ export const useModal = (id) => {
   ];
 };
 
-export const ModalTitle = () => (
-  <h2 className="uk-modal-title">Headline</h2>
-);
-
-const Modal = (props) => {
-  const { children, ...restProps } = props;
+const Modal = (props, ref) => {
+  const { children, title, ...restProps } = props;
 
   return (
-    <div data-uk-modal {...restProps}>
+    <div ref={ref} data-uk-modal {...restProps}>
       <div className="uk-modal-dialog uk-modal-body">
+        <h2 className="uk-modal-title">{title}</h2>
         {children}
       </div>
     </div>
   );
 };
 
-export default Modal;
+export default React.forwardRef(Modal);
