@@ -5,6 +5,6 @@ import App from './App';
 // eslint-disable-next-line
 import UIkit from 'uikit';
 
-import './index.less';
+import './theme.less';
 
 ReactDOM.render(<App />, document.getElementById('root'));

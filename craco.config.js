@@ -4,6 +4,11 @@ module.exports = {
   plugins: [
     {
       plugin: CracoLessPlugin,
+      options: {
+        cssLoaderOptions: {
+          modules: {localIdentName: '[local]'}
+        }
+      }
     }
   ]
 };

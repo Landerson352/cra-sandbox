@@ -3,7 +3,7 @@ import UIkit from 'uikit';
 
 import { storiesOf } from '@storybook/react';
 
-import '../index.less';
+import '../theme.less';
 
 import Sortable from '../components/Sortable';
 
