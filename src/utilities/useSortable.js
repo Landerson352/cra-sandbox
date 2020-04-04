@@ -13,17 +13,18 @@ const useSortable = ({ handle, onMove }) => {
 
   React.useEffect(() => {
     const handleMoved = (e) => onMove(getSortableEventProps(e));
+    const element = ref.current;
 
-    ref.current.addEventListener('moved', handleMoved);
+    element.addEventListener('moved', handleMoved);
     return () => {
-      ref.current.removeEventListener('moved', handleMoved);
+      element.removeEventListener('moved', handleMoved);
     };
   }, [ref, onMove]);
 
   return {
     ref,
-    ['data-uk-grid']: true,
-    ['data-uk-sortable']: `handle: ${handle}`,
+    'uk-grid': true,
+    'uk-sortable': `handle: ${handle}`,
   };
 };
 

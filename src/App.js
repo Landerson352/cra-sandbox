@@ -1,7 +1,11 @@
 import React from 'react';
 
+import Box from './components/Box';
 import Button from './components/Button';
+import Card from './components/Card';
 import CustomComponent from './components/CustomComponent';
+import Form from './components/Form';
+import Input from './components/Input';
 import Modal, { ModalTitle, useModal } from './components/Modal';
 import Sortable from './components/Sortable';
 
@@ -22,6 +26,20 @@ const App = () => {
           <button className="uk-button uk-button-primary uk-margin-small-left" type="button">Save</button>
         </p>
       </Modal>
+
+      <Box bg="muted" p="large">
+        <Card variant="default body" m="auto-left auto-right" w="large">
+          <h2>Log in</h2>
+          <Form variant="stacked">
+            <Form.Group label="Username" id="login_username" />
+            <Form.Group label="Password" id="login_password" type="password" />
+            <Box.Flex variant="middle left" m="large-top">
+              <Button variant="primary">Log in</Button>
+              <Box as="a" href="#" text="muted" m="left">Need to create an account?</Box>
+            </Box.Flex>
+          </Form>
+        </Card>
+      </Box>
 
       <div className="uk-background-muted uk-padding-large">
         <div className="uk-width-large uk-card uk-card-default uk-card-body uk-margin-auto-left uk-margin-auto-right">

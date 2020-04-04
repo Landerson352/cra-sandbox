@@ -1,14 +1,15 @@
 import React from 'react';
-import cn from 'classnames';
 
-const Button = (props) => {
-  const { className, variant = 'default', ...restProps } = props;
+import Box from './Box';
 
-  const classes = ['uk-button', `uk-button-${variant}`];
+const Button = (props, ref) => (
+  <Box
+    ref={ref}
+    as="button"
+    ukComponent="button"
+    type="button"
+    {...props}
+  />
+);
 
-  return (
-    <button type="button" className={cn(...classes, className)} {...restProps} />
-  );
-};
-
-export default Button;
+export default React.forwardRef(Button);

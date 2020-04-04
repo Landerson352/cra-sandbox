@@ -1,15 +1,13 @@
 import React from 'react';
-import cn from 'classnames';
 
-const Card = (props) => {
-  const { className, variant = 'default', body, ...restProps } = props;
+import Box from './Box';
 
-  const classes = ['uk-card', `uk-card-${variant}`];
-  if (body) classes.push('uk-card-body');
+const Card = (props, ref) => (
+  <Box
+    ref={ref}
+    ukComponent="card"
+    {...props}
+  />
+);
 
-  return (
-    <div className={cn(...classes, className)} {...restProps} />
-  );
-};
-
-export default Card;
+export default React.forwardRef(Card);

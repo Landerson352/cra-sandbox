@@ -1,9 +1,18 @@
 import React from 'react';
 
 import './CustomComponent.less';
+import Box from './Box';
 
 const CustomComponent = () => (
-  <div className="custom-component">CustomComponent</div>
+  <Box
+    bg="primary"
+    light
+    m="large"
+    p="large"
+    className="custom-component"
+  >
+    CustomComponent
+  </Box>
 );
 
 export default CustomComponent;

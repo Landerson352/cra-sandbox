@@ -4,6 +4,7 @@ import times from 'lodash/times';
 import notify from '../utilities/notify';
 import useSortable from '../utilities/useSortable';
 import Card from './Card';
+import Grid from './Grid';
 
 const Sortable = () => {
   const sortable = useSortable({
@@ -14,13 +15,13 @@ const Sortable = () => {
   });
 
   return (
-    <ul {...sortable} className="uk-grid-small uk-child-width-1-3">
+    <Grid as="ul" variant="small" childWidth="1-3" {...sortable}>
       {times(12, (i) => (
         <li key={i} data-key={i}>
-          <Card body>Item {i}</Card>
+          <Card variant="default body">Item {i}</Card>
         </li>
       ))}
-    </ul>
+    </Grid>
   );
 };
 

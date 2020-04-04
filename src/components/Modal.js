@@ -1,10 +1,9 @@
 import React from 'react';
-import cn from 'classnames';
 
 export const useModal = (id) => {
   return [
     { id },
-    { ['uk-toggle']: `target: #${id}` },
+    { 'uk-toggle': `target: #${id}` },
   ];
 };
 
