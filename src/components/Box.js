@@ -39,6 +39,8 @@ const ukElement = (props, ukComponent) => {
     ...restProps
   } = props;
 
+  console.log(uk);
+
   const componentClasses = ukComponent ? [
     ['uk', ukComponent].join('-'),
     ...variant.split(' ').map((value) => ['uk', ukComponent, value].join('-')),
@@ -58,9 +60,10 @@ const ukElement = (props, ukComponent) => {
     ...getClassNames(position || pos, 'position'),
     ...getClassNames(text, 'text'),
     ...getClassNames(width || w, 'width'),
+    ...uk.split(' ').map(value => `uk-${value}`),
   ];
 
-  const ukProps = Object.assign(...uk.split(' ').map(k => ({ [k]: true })));
+  const ukProps = Object.assign(...uk.split(' ').map(value => ({ [`data-uk-${value}`]: true })));
 
   return {
     className: [...classes, className].join(' '),
