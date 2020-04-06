@@ -27,6 +27,7 @@ const ukElement = (props, ukComponent) => {
     light,
     m,
     margin,
+    modal,
     p,
     padding,
     pos,
@@ -56,6 +57,7 @@ const ukElement = (props, ukComponent) => {
     ...getClassNames(flex, 'flex'),
     ...getClassNames(light, 'light'),
     ...getClassNames(margin || m, 'margin'),
+    ...getClassNames(modal, 'modal'),
     ...getClassNames(padding || p, 'padding'),
     ...getClassNames(position || pos, 'position'),
     ...getClassNames(text, 'text'),
@@ -63,7 +65,10 @@ const ukElement = (props, ukComponent) => {
     ...uk.split(' ').map(value => `uk-${value}`),
   ];
 
-  const ukProps = Object.assign(...uk.split(' ').map(value => ({ [`data-uk-${value}`]: true })));
+  const ukProps = Object.assign(...uk.split(' ').map(str => {
+    const [name, value = true] = str.split('=');
+    return ({ [`data-uk-${name}`]: value });
+  }));
 
   return {
     className: [...classes, className].join(' '),

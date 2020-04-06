@@ -1,23 +1,31 @@
 import React from 'react';
+import { uniqueId } from 'lodash';
 
-export const useModal = (id) => {
+import Box from './Box';
+
+export const useModal = (explicitId) => {
+  const id = React.useRef(explicitId || `modal-${uniqueId()}`).current;
+
   return [
     { id },
-    { 'uk-toggle': `target: #${id}` },
+    { uk: `toggle=target:#${id}` },
   ];
 };
 
-const Modal = (props, ref) => {
+const ModalComponent = (props, ref) => {
   const { children, title, ...restProps } = props;
 
   return (
-    <div ref={ref} data-uk-modal {...restProps}>
-      <div className="uk-modal-dialog uk-modal-body">
-        <h2 className="uk-modal-title">{title}</h2>
+    <Box ref={ref} uk="modal" {...restProps}>
+      <Box modal="dialog body">
+        <Box as="h2" modal="title">{title}</Box>
         {children}
-      </div>
-    </div>
+      </Box>
+    </Box>
   );
 };
 
-export default React.forwardRef(Modal);
+const Modal = React.forwardRef(ModalComponent);
+Modal.useModal = useModal;
+
+export default Modal;
